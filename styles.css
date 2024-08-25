@@ -1,0 +1,88 @@
+body, td, div, p, a, input {
+    font-family: 'Proxima Nova', Roboto, Trebuchet MS, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+a {
+    color: #3cb6d3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #36a5be;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.header img {
+    height: 40px;
+}
+
+.content h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content p {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: #3cb6d3;
+    color: #fff;
+    padding: 10px 34px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ffcc00;
+    color: #007bff;
+}
+
+.footer {
+    text-align: center;
+    font-size
