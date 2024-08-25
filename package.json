@@ -1,0 +1,15 @@
+{
+  "name": "rental-application",
+  "version": "1.0.0",
+  "description": "A simple rental application form with payment via credit card.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'Build command not necessary for this project'"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  }
+}
